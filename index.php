@@ -67,10 +67,65 @@
         <div class="container">
             <?php
                 $cleverWelcomeMassage = 'All the love, none of the crap!';
-                $pupCount = 50;
+                $pupCount = rand(50,100);
+
             ?>
 
-            <h1><?php echo $cleverWelcomeMassage ?></h1>
+            <h1><?php echo ucwords($cleverWelcomeMassage) ?></h1>
+
+            <?php
+                $pet1 = 'Crew barka';
+                $pet2 = 'shark pug';
+                $pet3 = 'Pico de Gatooo';
+
+            $pancake = array(
+                'name' => 'Pancake',
+                'age' => '1 year',
+                'weight' => '9',
+                'bio' => 'treats and Snoozin!',
+                'filename' => 'pancake.png'
+            );
+            $pancake['breed'] = 'Bulldog';
+
+                $pets = array($pet1, $pet2, $pet3);
+                $pets[] = 'Kitty Gaga';
+            ?>
+
+            <div class= "row">
+                <div class="col-lg-4 pet-list-item"></div>
+                <h2><?php echo $pancake['name']; ?></h2>
+
+                <img src="/images/<?php echo $pancake['filename'];?>" class="img-rounded"/>
+
+                <blockquote  class="pet-list-details">
+                    <span class="label label-info"><?php echo $pancake['breed']?></span>
+                    <?php echo $pancake['age'];?>
+                    <?php echo $pancake['weight'];?> lbs
+                </blockquote>
+
+                <p>
+                    <?php echo $pancake['bio'];?>
+                </p>
+
+            </div>>
+
+            <?php
+                 foreach ($pets as $cutePet)
+                 {
+                     echo '<div class="col-lg-4">';
+                     echo '<h2>';
+                     echo $cutePet;
+                     echo '<h2>';
+                     echo '<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+                    condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+                    euismod. Donec sed odio dui.
+                     </p>';
+                     echo '</div>';
+                 }
+            ?>
+
+            </div>
+m
 
             <p>Over <?php echo $pupCount ?> pet friends!</p>
 
